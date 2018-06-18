@@ -436,6 +436,7 @@ InteractiveCli.prototype.handleCommands = function(command) {
             }
             break;
 
+	case '/se':
         case '/search':
             // Start a new search
             action = 2;
@@ -443,7 +444,8 @@ InteractiveCli.prototype.handleCommands = function(command) {
             emitter.emit('startSearch', command);
             break;
 
-        case '/timestamp':
+        case '/t':
+	case '/timestamp':
         case '/timestamps':
             Settings.properties.showTimestamps = !Settings.properties.showTimestamps;
             Settings.save();
